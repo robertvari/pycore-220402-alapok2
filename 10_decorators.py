@@ -6,6 +6,7 @@ def timer(func):
     def wrapper(*args, **kwargs):
         start_time = time.time()
 
+        # worker runs here!!
         result = func(*args, **kwargs)
 
         end_time = time.time()
@@ -17,8 +18,8 @@ def timer(func):
 
 
 @timer
-def worker1():
-    print("Worker1 Started")
+def worker1(name):
+    print(f"Worker1 Started: {name}")
     time.sleep(random.randint(3, 10))
     print("Worker1 Stopped.")
 
@@ -37,6 +38,4 @@ def worker3():
     print("Worker3 Stopped.")
 
 
-worker1()
-worker2()
-worker3()
+worker1("Robert")
