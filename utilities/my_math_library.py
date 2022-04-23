@@ -1,4 +1,4 @@
-
+from utilities.decorators import print_result
 
 
 @print_result
