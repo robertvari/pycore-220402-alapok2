@@ -19,4 +19,7 @@ def worker():
         time.sleep(random.randint(3, 10))
         job_queue.task_done()
 
-worker()
+
+for _ in range(20):
+    t = threading.Thread(target=worker)
+    t.start()
