@@ -4,6 +4,7 @@ import random, time
 def timer(func):
 
     def wrapper(*args, **kwargs):
+        print("timer called")
         start_time = time.time()
 
         # worker runs here!!
@@ -17,25 +18,21 @@ def timer(func):
     return wrapper
 
 
+def print_result(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        print(f"Result  is: {result}")
+        return result
+    return wrapper
+
+
+@print_result
 @timer
 def worker1(name):
     print(f"Worker1 Started: {name}")
     time.sleep(random.randint(3, 10))
     print("Worker1 Stopped.")
-
-
-@timer
-def worker2():
-    print("Worker2 Started")
-    time.sleep(random.randint(3, 10))
-    print("Worker2 Stopped.")
-
-
-@timer
-def worker3():
-    print("Worker3 Started")
-    time.sleep(random.randint(3, 10))
-    print("Worker3 Stopped.")
+    return "Hello!!!"
 
 
 worker1("Robert")
