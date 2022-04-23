@@ -13,8 +13,10 @@ for f in file_list:
 
 
 def worker():
-    for i in file_list:
-        print(f"Working on {i}")
+    while not job_queue.empty():
+        my_job = job_queue.get()
+        print(f"Working on {my_job}")
         time.sleep(random.randint(3, 10))
+        job_queue.task_done()
 
 worker()
