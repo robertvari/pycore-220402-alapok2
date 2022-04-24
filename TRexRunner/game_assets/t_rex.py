@@ -8,10 +8,13 @@ trex_frames = [
     pygame.image.load(get_resource("trex_run_02.png"))
 ]
 frame_index = 0
-trex_rect = trex_frames[frame_index].get_rect(x=50, y=ground_pos - 150)
+trex_rect = trex_frames[frame_index].get_rect(x=50, y=ground_pos)
 
 gravity = 0
 on_ground = True
+
+jump_sound = pygame.mixer.Sound(get_resource("jump.wav"))
+jump_sound.set_volume(0.2)
 
 
 def draw_trex(screen):
@@ -44,4 +47,5 @@ def jump():
         return
 
     gravity -= 20
+    jump_sound.play()
     on_ground = False

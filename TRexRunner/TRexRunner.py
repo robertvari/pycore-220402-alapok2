@@ -1,6 +1,8 @@
 from utilities.settings import *
 import pygame, sys
+from pygame import mixer
 pygame.init()
+mixer.init()
 
 from game_assets.start_screen import draw_start_screen
 from game_assets.game_over_screen import draw_game_over_screen
