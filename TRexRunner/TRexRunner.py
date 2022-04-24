@@ -8,6 +8,10 @@ pygame.display.set_caption(GAMETITLE)
 clock = pygame.time.Clock()
 
 
+def main():
+    game_loop()
+
+
 def check_events():
     for event in pygame.event.get():
         # handle exit game
@@ -35,4 +39,6 @@ def game_loop():
         pygame.display.update()
         clock.tick(FPS)
 
-game_loop()
+
+# start game
+main()
