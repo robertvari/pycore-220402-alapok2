@@ -11,8 +11,8 @@ screen = pygame.display.set_mode(SCREENSIZE)
 pygame.display.set_caption(GAMETITLE)
 clock = pygame.time.Clock()
 
-start_screen = False
-game_over = False
+start_screen = True
+game_over = True
 
 
 def main():
