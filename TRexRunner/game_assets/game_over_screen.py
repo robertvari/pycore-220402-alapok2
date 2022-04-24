@@ -7,7 +7,11 @@ title = title_font.render("Game Over", True, "white")
 title_rect = title.get_rect(midtop=(SCREENSIZE[0]/2, 100))
 
 # load trex image
-trex_image = pygame.image.load("resources/trex_dead_02.png")
+dead_trex_frames = [
+    pygame.image.load("resources/trex_dead_02.png"),
+    pygame.image.load("resources/trex_dead_03.png"),
+]
+trex_image = dead_trex_frames[0]
 trex_rect = trex_image.get_rect(midtop=(title_rect.midbottom[0], title_rect.midbottom[1]))
 
 # press space to start
