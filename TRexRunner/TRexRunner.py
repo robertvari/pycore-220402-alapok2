@@ -28,10 +28,6 @@ def check_events():
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             exit_game()
 
-        # handle jump key
-        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-            print("Jump")
-
 
 def exit_game():
     pygame.quit()
