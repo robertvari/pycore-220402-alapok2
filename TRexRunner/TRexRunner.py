@@ -41,6 +41,7 @@ def game_loop():
         if not game_over:
             if start_screen:
                 # show start screen
+                print("Show start screen")
                 pass
             else:
                 # run game
