@@ -4,14 +4,15 @@ pygame.init()
 
 from game_assets.start_screen import draw_start_screen
 from game_assets.game_over_screen import draw_game_over_screen
+from game_assets.main_game import main_game_screen
 
 # init pygame window
 screen = pygame.display.set_mode(SCREENSIZE)
 pygame.display.set_caption(GAMETITLE)
 clock = pygame.time.Clock()
 
-start_screen = True
-game_over = True
+start_screen = False
+game_over = False
 
 
 def main():
