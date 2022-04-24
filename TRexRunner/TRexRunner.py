@@ -7,6 +7,9 @@ screen = pygame.display.set_mode(SCREENSIZE)
 pygame.display.set_caption(GAMETITLE)
 clock = pygame.time.Clock()
 
+start_screen = True
+game_over = False
+
 
 def main():
     game_loop()
@@ -34,6 +37,17 @@ def exit_game():
 def game_loop():
     while True:
         check_events()
+
+        if not game_over:
+            if start_screen:
+                # show start screen
+                pass
+            else:
+                # run game
+                pass
+        else:
+            # game over screen
+            pass
 
         screen.fill(BACKGROUND_COLOR)
         pygame.display.update()
