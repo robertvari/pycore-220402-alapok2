@@ -3,6 +3,7 @@ import pygame, sys
 pygame.init()
 
 from game_assets.start_screen import draw_start_screen
+from game_assets.game_over_screen import draw_game_over_screen
 
 # init pygame window
 screen = pygame.display.set_mode(SCREENSIZE)
@@ -10,7 +11,7 @@ pygame.display.set_caption(GAMETITLE)
 clock = pygame.time.Clock()
 
 start_screen = True
-game_over = False
+game_over = True
 
 
 def main():
@@ -49,8 +50,7 @@ def game_loop():
                 # run game
                 pass
         else:
-            # game over screen
-            pass
+            draw_game_over_screen(screen)
 
         pygame.display.update()
         clock.tick(FPS)
