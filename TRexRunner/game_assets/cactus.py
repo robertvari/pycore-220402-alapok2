@@ -13,3 +13,8 @@ def draw_cactus(screen):
         cactus_rect.x = SCREENSIZE[0]
 
     screen.blit(cactus_image, cactus_rect)
+    # pygame.draw.rect(screen, "red", cactus_rect, 3)
+
+
+def get_cactus_rect():
+    return cactus_rect

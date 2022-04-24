@@ -38,6 +38,7 @@ def draw_trex(screen):
         on_ground = True
 
     screen.blit(trex_frames[int(frame_index)], trex_rect)
+    # pygame.draw.rect(screen, "blue", trex_rect, 3)
 
 
 def jump():
@@ -49,3 +50,7 @@ def jump():
     gravity -= 20
     jump_sound.play()
     on_ground = False
+
+
+def get_trex_rect():
+    return trex_rect
