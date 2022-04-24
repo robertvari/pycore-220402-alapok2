@@ -1,5 +1,5 @@
 SCREENSIZE = (1200, 400)
 GAMETITLE = "T-Rex Runner"
-FPS = 60
+FPS = 12
 MYNAME = "Robert Vari"
 BACKGROUND_COLOR = "#0096c7"
