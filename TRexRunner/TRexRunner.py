@@ -12,16 +12,19 @@ def check_events():
     for event in pygame.event.get():
         # handle exit game
         if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+            exit_game()
 
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
-            pygame.quit()
-            sys.exit()
+            exit_game()
 
         # handle jump key
         if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
             print("Jump")
+
+
+def exit_game():
+    pygame.quit()
+    sys.exit()
 
 
 def game_loop():
