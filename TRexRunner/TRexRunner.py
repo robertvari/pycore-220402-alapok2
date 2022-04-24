@@ -2,6 +2,8 @@ from utilities.settings import *
 import pygame, sys
 pygame.init()
 
+from game_assets.start_screen import draw_start_screen
+
 # init pygame window
 screen = pygame.display.set_mode(SCREENSIZE)
 pygame.display.set_caption(GAMETITLE)
@@ -37,12 +39,12 @@ def exit_game():
 def game_loop():
     while True:
         check_events()
+        screen.fill(BACKGROUND_COLOR)
 
         if not game_over:
             if start_screen:
                 # show start screen
-                print("Show start screen")
-                pass
+                draw_start_screen(screen)
             else:
                 # run game
                 pass
@@ -50,7 +52,6 @@ def game_loop():
             # game over screen
             pass
 
-        screen.fill(BACKGROUND_COLOR)
         pygame.display.update()
         clock.tick(FPS)
 
