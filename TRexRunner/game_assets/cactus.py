@@ -18,3 +18,7 @@ def draw_cactus(screen):
 
 def get_cactus_rect():
     return cactus_rect
+
+
+def reset_cactus():
+    cactus_rect.x = SCREENSIZE[0]

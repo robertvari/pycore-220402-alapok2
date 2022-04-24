@@ -8,7 +8,7 @@ from game_assets.start_screen import draw_start_screen
 from game_assets.game_over_screen import draw_game_over_screen
 from game_assets.main_game import main_game_screen
 from game_assets.t_rex import get_trex_rect
-from game_assets.cactus import get_cactus_rect
+from game_assets.cactus import get_cactus_rect, reset_cactus
 from utilities.resources import get_resource
 
 # init pygame window
@@ -27,6 +27,8 @@ def main():
 
 
 def check_events():
+    global game_over
+
     for event in pygame.event.get():
         # handle exit game
         if event.type == pygame.QUIT:
@@ -36,6 +38,10 @@ def check_events():
             exit_game()
 
         # if game over and space pressed
+        if game_over:
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                reset_cactus()
+                game_over = False
 
 
 def exit_game():
